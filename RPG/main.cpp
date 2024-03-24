@@ -8,7 +8,7 @@ using namespace std;
 
 // systeme de points a repartir pour JcJ ?
 // utiliser une structure
-// faire un constructeur avec paramètre du string qui en fonction du string attribue des stats
+// faire un constructeur avec paramÃ¨tre du string qui en fonction du string attribue des stats
 
 int Combat(Player P1, Player P2){
     cout<<"Pv du "<<P1.NAME<<" : " <<P1.PV<<endl;
@@ -67,10 +67,10 @@ void Compteur(int n,Player P1, Player P2){
     cout<< "Le "<<P2.NAME<<" a gagne "<< Second << " fois."<<endl;
 }
 
-void ChangementDeStats(int& credits,Player& OP) //chaque case permet de modifier une stat spécifique avec un seul caractère,
-{                                               //impossible d'utiliser un string avec switch c'est pour ça que ça devient des lettres apres 10
-    char a;                                     //les crédits et le joueur en reference pour que les changements soient sauvegardés
-    bool BoucleInfinie = true; //pas vraiment infinie, case 0 permet de l'arrêter
+void ChangementDeStats(int& credits,Player& OP) //chaque case permet de modifier une stat spÃ©cifique avec un seul caractÃ¨re,
+{                                               //impossible d'utiliser un string avec switch c'est pour Ã§a que Ã§a devient des lettres apres 10
+    char a;                                     //les crÃ©dits et le joueur en reference pour que les changements soient sauvegardÃ©s
+    bool BoucleInfinie = true; //pas vraiment infinie, case 0 permet de l'arrÃªter
     while(BoucleInfinie){
         cout<<"=============================="<<endl<<endl;
         cout<<"Vous avez actuellement "<<credits<<" credits."<<endl<<endl;
@@ -138,7 +138,7 @@ void ChangementDeStats(int& credits,Player& OP) //chaque case permet de modifier
         case'6' :
             {
             if (credits==0){
-                cout<<"\""<<"Le pauvre n’est pas celui qui a peu, mais celui qui en veut toujours plus."<<"\""<<endl;
+                cout<<"\""<<"Le pauvre nâ€™est pas celui qui a peu, mais celui qui en veut toujours plus."<<"\""<<endl;
                 cout<<"Vous n'avez plus de credits ! Reduisez une statistique pour en recuperer ou terminez la creation !"<<endl;
                 goto StatIrreductible;
             }
@@ -212,7 +212,7 @@ void ChangementDeStats(int& credits,Player& OP) //chaque case permet de modifier
             BoucleInfinie = false;
             break;
             }
-        StatIrreductible : ; //permet de sortir du if et du case en cas d'incoherence au niveau des stats ou d'un manque de crédits
+        StatIrreductible : ; //permet de sortir du if et du case en cas d'incoherence au niveau des stats ou d'un manque de crÃ©dits
         }
     }
 }
@@ -254,7 +254,7 @@ void CreationDePersonnage(){
                 cout<<"Etes-vous sur de vouloir lea nommer : "<<OP.NAME<<" ?"<<endl<<"Y/N :";
                 cin>>c;
                 }while(c!= 'Y');
-                ofstream file("Persos_Créés.txt", fstream::app);
+                ofstream file("Persos_CrÃ©Ã©s.txt", fstream::app);
                 file<<endl<<OP.PV<<" "<<OP.ATK<<" "<<OP.DEF<<" "<<OP.VIT<<" "<<OP.PRE<<" "<<OP.LCK<<" "<<OP.NAME;
                 file.close();
                 MenuCreationDePersonnage();
@@ -274,11 +274,11 @@ void CreationDePersonnage(){
     }
 }
 
-int ComptageDePersonnage() //même code que Visionnage mais n'affiche pas de texte, sert à s'assurer que l'utilisateur
+int ComptageDePersonnage() //mÃªme code que Visionnage() mais n'affiche pas de texte, sert Ã  s'assurer que l'utilisateur
 {                          //choisit une option possible c'est plus compact de faire un do while qu'un switch ici
     Player P;
     int n = 1;
-    ifstream file("Persos_Créés.txt");
+    ifstream file("Persos_CrÃ©Ã©s.txt");
         while(file.good()){
         file>>P;
         n++;
@@ -286,11 +286,11 @@ int ComptageDePersonnage() //même code que Visionnage mais n'affiche pas de text
     return n;
 }
 
-void VisionnageDePersonnage() //si affiche deux dois la derniere ligne, verifier qu'il n'y a pas un retour a la ligne en trop dans le .txt
+void VisionnageDePersonnage() //si affiche deux fois la derniere ligne, verifier qu'il n'y a pas un retour a la ligne en trop dans le .txt
 {
     Player P;
     int n = 1;
-    ifstream file("Persos_Créés.txt");
+    ifstream file("Persos_CrÃ©Ã©s.txt");
     cout<<endl;
         while(file.good()){
         file>>P;
@@ -314,14 +314,14 @@ void MenuCreationDePersonnage()
         cin>>c;
         switch(c)
         {
-        case '1': //lance la fonction création de perso
+        case '1': //lance la fonction crÃ©ation de perso
             {
             CreationDePersonnage();
             ExitLoop=false;
             break;
             }
 
-        case '2': //permet de voir les différents perso déjà créés
+        case '2': //permet de voir les diffÃ©rents perso dÃ©jÃ  crÃ©Ã©s
             {
             VisionnageDePersonnage();
             break;
@@ -342,7 +342,7 @@ void SelectionDePersonnage(Player& P1, Player& P2)
 {
     int SelectP1;
     int SelectP2;
-    ifstream file1("Persos_Créés.txt");
+    ifstream file1("Persos_CrÃ©Ã©s.txt");
     int n = ComptageDePersonnage();
     do{
     select1:;
@@ -354,7 +354,7 @@ void SelectionDePersonnage(Player& P1, Player& P2)
             file1>>P1;
         };
     file1.clear();  //nettoie ce qu'il a lu
-    file1.seekg(0); //reprend de la première ligne du fichier texte
+    file1.seekg(0); //reprend de la premiÃ¨re ligne du fichier texte
     }while(SelectP1 <=0 || SelectP1 >= n);
 
     cout<<endl<<"Joueur 1 est lea "<<P1.NAME<<"."<<endl<<endl;
@@ -372,7 +372,7 @@ void SelectionDePersonnage(Player& P1, Player& P2)
         };
     }while(SelectP2 <=0 || SelectP2 >= n);
     file1.close();
-    if(P1==P2)                                                  // en cas de doublon de personnages, permet de les différencier
+    if(P1==P2)                                                  // en cas de doublon de personnages, permet de les diffÃ©rencier
         {
         P1.NAME += " (1)";
         P2.NAME += " (2)";
@@ -394,7 +394,7 @@ int main()
     //Compteur(100, Archer, Voleur);
     //Compteur(100, Archer, Bretteur);
 
-    //Tout ce qui suit sera surement appelé dans un menu principal une fois mis en place, ça finira probablement dans une autre fonction.
+    //Tout ce qui suit sera surement appelÃ© dans un menu principal une fois mis en place, Ã§a finira probablement dans une autre fonction.
     MenuCreationDePersonnage();
     rechoose:;
     SelectionDePersonnage(Joueur1, Joueur2);
@@ -412,15 +412,3 @@ int main()
     return 0;
 }
 
- /**
-    do{
-    cout << "====================" << endl;
-    cout << "Round "<< Round <<endl;
-
-
-
-    cout << "====================" << endl;
-    cout << " " << endl;
-    Round += 1;
-    }while (!P1.IsDead() && !P2.IsDead());
-    cout<< "c fini"<<endl; */
