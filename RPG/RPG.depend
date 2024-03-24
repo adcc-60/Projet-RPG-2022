@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1666090738 source:u:\tp c++\projet\rpg\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"lib.h"
+
+1666090738 u:\tp c++\projet\rpg\lib.h
+
+1666455231 source:c:\users\adrien\documents\c++\rpg\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"lib.h"
+
+1666452514 c:\users\adrien\documents\c++\rpg\lib.h
+
+1667912235 source:c:\users\adrie\documents\c++\projet\rpg\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	"lib.h"
+	<string>
+	<fstream>
+
+1670281724 c:\users\adrie\documents\c++\projet\rpg\lib.h
+	<string>
+

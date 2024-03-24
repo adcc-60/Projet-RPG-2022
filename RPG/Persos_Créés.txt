@@ -1,0 +1,7 @@
+5 2 0 0 10 360 Lucky
+60 4 4 4 50 10 Lambda
+75 8 8 6 70 30 Medium
+100 16 2 5 50 0 Berserker
+60 4 4 4 50 10 Michel
+5 4 4 0 100 0 Glouf
+5 2 2 0 10 0 ALARAMASS
